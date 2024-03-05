@@ -40,7 +40,7 @@ Review the window where you are running the Simple RTSP server and ensure the RT
 ### 5. Start streaming
 Replace the `<ip>` with the IP address you copied in step 1 and the `<video>` with the device name you copied in step 3.
 ```sh
-ffmpeg -f dshow -i video="<video>" -framerate 30 -video_size 640x480 -f rtsp -rtsp_transport udp rtsp://<ip>:8554/webcam.h264
+ffmpeg -f dshow -i video="<video>" -framerate 30 -video_size 640x480 -rtbufsize 15M -f rtsp -rtsp_transport udp rtsp://<ip>:8554/webcam.h264
 ```
 
 ### 6. View the stream
